@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node server.js",
+    "build": "ng build --prod && node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,6 +21,8 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "angular-in-memory-web-api": "^0.5.4",
+    "angular2-uuid": "^1.1.1",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-alpha.5",

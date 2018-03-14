@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema =mongoose.Schema
 const ObjectId=Schema.ObjectId
-const url="mongodb://用户名:密码@ip地址:3717/数据库名称"
-
+//const url="mongodb://用户名:密码@ip地址:3717/数据库名称"
+const url ="mongodb://huizhe:huizhe!2017@39.108.238.128:3717/huizhe_data_happy"
 
 let Db
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PostsService } from '../posts.service';
 
 @Component({
@@ -8,15 +8,23 @@ import { PostsService } from '../posts.service';
 })
 export class PostsComponent implements OnInit {
   //初始化为一个空数组用来接收posts
-  posts:any=[];
+  posts: any = [];
+  islogin: boolean = false;
 
-  constructor(private postsService:PostsService) { }
+  username = "";
+  password = "";
+
+  constructor(
+    @Inject('auth') private authService,
+    @Inject('posts') private postsService
+  ) { }
 
   ngOnInit() {
-    //从API获取所有的posts
-    this.postsService.getAllPosts().subscribe(posts=>{
-      this.posts=posts;
-    });
+    if (this.islogin) {
+      //从API获取所有的posts
+      this.postsService.getAllPosts().subscribe(posts => {
+        this.posts = posts;
+      });
+    }
   }
-
 }
