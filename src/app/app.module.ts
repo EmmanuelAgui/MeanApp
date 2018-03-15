@@ -59,7 +59,8 @@ const ROUTES=[
   ],
   providers: [
     {provide:'auth',useClass:AuthService },
-    {provide:'posts',useClass:PostsService}
+    {provide:'posts',useClass:PostsService},
+    {provide:'api',useValue:'http://localhost:3000'}
   ],//添加posts service
   bootstrap: [AppComponent]
 })

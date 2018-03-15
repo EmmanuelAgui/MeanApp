@@ -16,15 +16,14 @@ export class PostsComponent implements OnInit {
 
   constructor(
     @Inject('auth') private authService,
-    @Inject('posts') private postsService
+    @Inject('posts') private postsService,
+    @Inject('api') private apiUrl,
   ) { }
 
   ngOnInit() {
-    if (this.islogin) {
-      //从API获取所有的posts
-      this.postsService.getAllPosts().subscribe(posts => {
-        this.posts = posts;
-      });
-    }
+    //从API获取所有的posts
+    /* this.postsService.getAllPosts().subscribe(posts => {
+      this.posts = posts;
+    }); */
   }
 }
